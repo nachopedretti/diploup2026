@@ -11,18 +11,19 @@ Mi objetivo es analizar las características de los alumnos que abandonan y comp
 
 ## Dataset
 
-Utilicé el archivo `academic_survival_longitudinal.csv`, que contiene **79.239 registros y 22 columnas** con información académica, económica y personal de estudiantes.
+Utilicé el archivo academic_survival_longitudinal.csv, que contiene 79.239 registros, correspondientes a 20.000 estudiantes únicos, y 22 columnas con información académica, económica y personal.
 
-El dataset incluye datos sobre rendimiento académico, horas de trabajo, asistencia, accesos al campus virtual, estrés financiero y situación académica.
+Cada registro representa a un estudiante en un semestre determinado, por lo que un mismo estudiante puede aparecer en distintos registros.
 
-Cada registro corresponde a la información de un estudiante en un semestre, por lo que la cantidad de registros no necesariamente equivale a la cantidad de alumnos únicos.
+El dataset incluye información sobre rendimiento académico, horas de trabajo, asistencia, accesos al campus virtual, estrés financiero y situación académica.
 
-Para analizar el abandono utilicé principalmente `Target_Dropout_Next_Sem`, donde:
+Para analizar el abandono utilicé principalmente Target_Dropout_Next_Sem, donde:
 
-- **0:** el estudiante no abandona en el semestre siguiente.
-- **1:** el estudiante abandona en el semestre siguiente.
+0: el estudiante no abandona en el semestre siguiente.
 
-También utilicé `End_of_Semester_Status` para conocer la situación académica de los estudiantes al finalizar cada semestre.
+1: el estudiante abandona en el semestre siguiente.
+
+También utilicé End_of_Semester_Status para conocer la situación académica de los estudiantes al finalizar cada semestre.
 
 ## Diccionario de datos
 
@@ -94,17 +95,21 @@ Considero que ambas variables podrían servir como señales para hacer un seguim
 
 ### 5. Abandono según el semestre
 
-La tasa de abandono es menor en el primer semestre (6,7%), aumenta en los siguientes y después se mantiene cerca del 9% y 10%.
+La tasa de abandono observada es menor en el primer semestre (6,7%) y se ubica cerca del 9% y 10% en varios de los semestres posteriores.
 
-Esto muestra que el seguimiento de los alumnos no debería concentrarse solamente en los ingresantes, sino también en quienes están más avanzados en la carrera.
+Estos resultados muestran diferencias en las tasas de abandono entre semestres, pero no permiten afirmar que el riesgo individual aumente a medida que un estudiante avanza en la carrera.
+
+Por eso, considero importante que el seguimiento académico no se concentre únicamente en los ingresantes, sino que también contemple a estudiantes de semestres posteriores.
 
 ### 6. Correlaciones
 
-El rendimiento académico (-0,25) y el estrés financiero (0,22) son las variables que presentan mayor correlación con el abandono entre las analizadas, aunque los valores no son muy altos.
+La matriz de correlaciones permitió identificar algunas asociaciones entre las variables numéricas analizadas.
 
-También encontré que los estudiantes que trabajan más horas tienden a tener menor asistencia (-0,30).
+Entre los resultados, observé una correlación negativa entre el ingreso familiar y las horas de trabajo (-0,43), así como entre las horas de trabajo y la asistencia (-0,30).
 
-Estos resultados muestran que el abandono podría estar relacionado con distintos factores académicos, laborales y económicos.
+También encontré correlaciones positivas entre el rendimiento académico y los accesos al campus virtual (0,33), y entre el rendimiento académico y la asistencia (0,31).
+
+Estas asociaciones no permiten establecer relaciones causales, pero ayudan a comprender cómo se relacionan algunas características de los estudiantes.
 
 ## Variables que decidí no profundizar
 
@@ -118,8 +123,8 @@ Esto no significa que las variables que dejé de lado no tengan relación con el
 
 A través del análisis pude encontrar relaciones entre el abandono estudiantil y factores como el rendimiento académico, las horas de trabajo, el estrés financiero y la participación académica.
 
-Uno de los principales resultados que encontré es que **los alumnos que trabajan muchas horas y tienen bajo rendimiento presentan mayores porcentajes de abandono**. Algo similar ocurre cuando se combinan muchas horas de trabajo y estrés financiero elevado.
+Uno de los principales resultados que encontré es que los alumnos que trabajan muchas horas y tienen bajo rendimiento presentan mayores porcentajes de abandono. Algo similar ocurre cuando se combinan muchas horas de trabajo y estrés financiero elevado.
 
 Considero que estos resultados podrían ayudar a la universidad a identificar perfiles que necesitan mayor acompañamiento y pensar acciones para mejorar la permanencia de los alumnos.
 
-De todas formas, se trata de un análisis exploratorio, por lo que pude identificar relaciones entre variables, pero no asegurar que sean las causas del abandono.
+De todas formas, se trata de un análisis exploratorio, por lo que los resultados permiten identificar asociaciones entre variables, pero no establecer relaciones causales ni predecir qué estudiantes van a abandonar.
