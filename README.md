@@ -61,6 +61,9 @@ Para el análisis utilicé histogramas con KDE, boxplots, scatterplots, gráfico
 
 También comparé grupos de estudiantes según sus horas de trabajo, rendimiento académico y estrés financiero para identificar diferencias en las tasas de abandono.
 
+## Cómo ejecutar el análisis
+El análisis se encuentra en el notebook DiploUP_TP1_9449.ipynb y fue desarrollado en Google Colab utilizando Python.
+
 ## Principales hallazgos
 
 ### 1. Rendimiento académico
