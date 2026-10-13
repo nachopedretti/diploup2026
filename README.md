@@ -27,23 +27,41 @@ También utilicé End_of_Semester_Status para conocer la situación académica d
 
 ## Diccionario de datos
 
-Estas son las principales variables utilizadas en el análisis:
+El dataset contiene 22 variables con información académica, laboral, económica y personal de los estudiantes.
 
-| Variable | Descripción |
-|---|---|
-| Student_ID | Identificador del estudiante |
-| Semester | Semestre que cursa |
-| Work_Hours | Horas de trabajo semanales |
-| Sem_GPA | Promedio académico del semestre |
-| Attendance | Porcentaje de asistencia |
-| LMS_Logins | Cantidad de accesos al campus virtual |
-| Course_Load | Cantidad de materias cursadas |
-| Financial_Stress | Nivel de estrés financiero |
-| Family_Income | Ingreso familiar |
-| Advising_Visits | Visitas de asesoramiento académico |
-| Housing_Status | Situación de vivienda del estudiante |
-| Target_Dropout_Next_Sem | Indica si abandona en el semestre siguiente |
-| End_of_Semester_Status | Estado del estudiante al finalizar el semestre |
+### Variables utilizadas en el análisis
+
+| Variable | Tipo de dato | Descripción |
+|---|---|---|
+| `Student_ID` | `object` | Identificador del estudiante. Permite reconocer sus registros en distintos semestres. |
+| `Semester` | `int64` | Semestre académico al que corresponde el registro. |
+| `Work_Hours` | `float64` | Cantidad de horas de trabajo semanales. |
+| `Sem_GPA` | `float64` | Promedio académico obtenido durante el semestre. |
+| `Attendance` | `float64` | Porcentaje de asistencia del estudiante. |
+| `LMS_Logins` | `float64` | Cantidad de accesos al campus virtual. |
+| `Course_Load` | `int64` | Cantidad de materias cursadas durante el semestre. |
+| `Financial_Stress` | `float64` | Nivel de estrés financiero del estudiante. |
+| `Family_Income` | `float64` | Ingreso familiar del estudiante. |
+| `Failed_Courses` | `int64` | Cantidad de materias desaprobadas. |
+| `Housing_Status` | `object` | Situación de vivienda del estudiante. |
+| `Age` | `int64` | Edad del estudiante. |
+| `Target_Dropout_Next_Sem` | `int64` | Indica si abandona en el semestre siguiente: 0 = no abandona; 1 = abandona. |
+| `End_of_Semester_Status` | `object` | Situación académica del estudiante al finalizar el semestre actual. |
+
+### Variables que no use en el análisis
+
+| Variable | Tipo de dato | Descripción |
+|---|---|---|
+| `Gender` | `object` | Género del estudiante. |
+| `First_Generation` | `int64` | Indica si pertenece a la primera generación de su familia que accede a estudios universitarios. |
+| `Household_Size` | `int64` | Cantidad de personas que integran el hogar. |
+| `Scholarship` | `int64` | Información sobre la condición de becario del estudiante. |
+| `Tuition_Base` | `int64` | Valor base de la matrícula o arancel académico. |
+| `Emergency_Expense` | `float64` | Gasto económico extraordinario o de emergencia. |
+| `Advising_Visits` | `int64` | Cantidad de visitas de asesoramiento académico. |
+| `Censored` | `int64` | Indicador de censura del registro, relacionado con la disponibilidad de información para observar el resultado de seguimiento. |
+
+La selección de variables respondió al objetivo de explorar principalmente las relaciones entre rendimiento académico, carga laboral, asistencia, participación en el campus virtual, situación económica y abandono estudiantil.
 
 ## Metodología
 
